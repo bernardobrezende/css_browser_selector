@@ -65,6 +65,7 @@ function css_browser_selector(u)
 						? ' '+dv+( (RegExp.$2).replace(/ /g,"_") ).replace(/-/g,"_")
 						:''	)
 				) //android
+				+ (is('chrome') ? ' ' + c + (/chrome\/((\d+)(\.(\d+))(\.\d+)*)/.test(ua) ? ' ' + c + RegExp.$2 + ((RegExp.$4 > 0) ? ' ' + c + RegExp.$2 + "_" + RegExp.$4 : '') : '') : '')
 	
 			:is('chrome')?w+   ' '+c+(/chrome\/((\d+)(\.(\d+))(\.\d+)*)/.test(ua)?' '+c+RegExp.$2 +((RegExp.$4>0) ? ' '+c+RegExp.$2+"_"+RegExp.$4:''):'')	
 			
